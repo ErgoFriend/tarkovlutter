@@ -6,4 +6,4 @@ Whire a feature request in Issues.
 
 We need feature requests for application improvements.
 
-[![Image from Gyazo](https://i.gyazo.com/1946d79e93418b21c13066527334c204.png)](https://gyazo.com/1946d79e93418b21c13066527334c204)
+<img src="[***画像のURL***](https://i.gyazo.com/1946d79e93418b21c13066527334c204.png)" width="500>
