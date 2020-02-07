@@ -35,15 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Business',
+      'Index 0: Plan',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Home',
+      'Index 1: Map',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Settings',
       style: optionStyle,
     ),
   ];
