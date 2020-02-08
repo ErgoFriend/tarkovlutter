@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,8 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'tarkov guide',
       home: const MyHomePage(title: 'TARKOV Guide'),
-      theme: ThemeData.dark()
-          .copyWith(backgroundColor: const Color.fromARGB(0, 18, 0, 47)),
+      theme: ThemeData.dark(),
     );
   }
 }
@@ -46,6 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
       'Index 2: Settings',
       style: optionStyle,
     ),
+    Text(
+      'Index 2: Settings',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: Settings',
+      style: optionStyle,
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -75,45 +83,29 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.aspect_ratio),
-            title: const Text('plan'),
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Colors.black,
+        buttonBackgroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        animationCurve: Curves.easeOut,
+        items: <Widget>[
+          Icon(
+            Icons.aspect_ratio,
+            size: 30,
+            color: Colors.blue.shade400,
           ),
-          BottomNavigationBarItem(
-            icon: Opacity(
-              opacity: 0,
-              child: Icon(Icons.map),
-            ),
-            title: const Text(''),
+          Icon(
+            Icons.map,
+            size: 30,
+            color: Colors.blue.shade400,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: const Text('settings'),
+          Icon(
+            Icons.settings,
+            size: 30,
+            color: Colors.blue.shade400,
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
-      floatingActionButton: Container(
-        width: 90,
-        height: 70,
-        child: FittedBox(
-          alignment: Alignment.topCenter,
-          child: FloatingActionButton(
-            elevation: 0,
-            hoverElevation: 0,
-            highlightElevation: 0,
-            child: Icon(Icons.map),
-            onPressed: () {
-              _onItemTapped(1);
-            },
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
