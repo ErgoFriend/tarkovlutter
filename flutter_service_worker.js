@@ -7,10 +7,10 @@ const RESOURCES = {
 "/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
 "/assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
-"/assets/LICENSE": "bef928eda7dc467ddf26bd74087f1c24",
+"/assets/LICENSE": "7d4d3da23d285538cb318f1d7dc4f8fd",
 "/assets/FontManifest.json": "01700ba55b08a6141f33e168c4a6c22f",
 "/assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"/main.dart.js": "2ca5c087da793c96bccdb2e7d4a65f04",
+"/main.dart.js": "cd5818bbfa7830b19278a6f74839cb49",
 "/favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
