@@ -71,9 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: buildPageView(),
       bottomNavigationBar: CurvedNavigationBar(
         color: Theme.of(context).primaryColor,
