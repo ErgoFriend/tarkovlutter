@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
+import 'pages/map.dart';
+import 'pages/plan.dart';
+import 'pages/settings.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -25,41 +29,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+  int bottomSelectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-    color: Colors.red,
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
   );
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Plan',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Map',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
-  ];
-
-  void _onItemTapped(int index) {
+  void pageChanged(int index) {
     setState(() {
-      _selectedIndex = index;
+      bottomSelectedIndex = index;
     });
+  }
+
+  Widget buildPageView() {
+    return PageView(
+      controller: pageController,
+      onPageChanged: pageChanged,
+      children: <Widget>[
+        Plan(),
+        Map(),
+        Yellow(),
+      ],
+    );
+  }
+
+  void bottomTapped(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.animateToPage(index,
+          duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -68,26 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SafeArea(
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            image: const DecorationImage(
-              image: NetworkImage(
-                  'https://www.mightygamesmag.de/wp-content/uploads/2017/06/Escape-from-Tarkov1.jpg'),
-              fit: BoxFit.contain,
-            ),
-          ),
-          child: Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
-          ),
-        ),
-      ),
+      body: buildPageView(),
       bottomNavigationBar: CurvedNavigationBar(
-        color: Colors.black,
-        buttonBackgroundColor: Colors.black,
-        backgroundColor: Colors.white,
+        color: Theme.of(context).primaryColor,
+        buttonBackgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         animationCurve: Curves.easeOut,
+        animationDuration: const Duration(milliseconds: 300),
         items: <Widget>[
           Icon(
             Icons.aspect_ratio,
@@ -105,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.blue.shade400,
           ),
         ],
+        onTap: bottomTapped,
       ),
     );
   }
