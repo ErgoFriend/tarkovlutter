@@ -10,7 +10,7 @@ const RESOURCES = {
 "/assets/LICENSE": "7d4d3da23d285538cb318f1d7dc4f8fd",
 "/assets/FontManifest.json": "01700ba55b08a6141f33e168c4a6c22f",
 "/assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"/main.dart.js": "cd5818bbfa7830b19278a6f74839cb49",
+"/main.dart.js": "ed440dbab763fc8d50fe992a55a258d9",
 "/favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
