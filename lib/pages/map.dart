@@ -13,7 +13,7 @@ class _MapState extends State<Map> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-              'https://www.kindpng.com/picc/m/342-3424362_clip-art-logo-brand-product-design-escape-from.png'),
+              'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/4/43/Map.png?version=f24344a65d77ebcb4cc6d2df01b619d8'),
           fit: BoxFit.contain,
         ),
       ),

@@ -9,14 +9,21 @@ class Yellow extends StatefulWidget {
 class _YellowState extends State<Yellow> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(
-              'https://movielovegamer.com/wp-content/uploads/2019/10/preliminaryPatchnotes_012.png'),
-          fit: BoxFit.contain,
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.map),
+          title: const Text('Map'),
         ),
-      ),
+        ListTile(
+          leading: Icon(Icons.photo_album),
+          title: const Text('Album'),
+        ),
+        ListTile(
+          leading: Icon(Icons.phone),
+          title: const Text('Phone'),
+        ),
+      ],
     );
   }
 }

@@ -12,8 +12,7 @@ class _PlanState extends State<Plan> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
-              'https://www.mightygamesmag.de/wp-content/uploads/2017/06/Escape-from-Tarkov1.jpg'),
+          image: NetworkImage('https://i.imgur.com/SIHOhpV.jpg'),
           fit: BoxFit.contain,
         ),
       ),
